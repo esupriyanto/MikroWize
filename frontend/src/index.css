@@ -83,14 +83,6 @@
   /* Typography */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-
   /* Border Radius (Material Design 3 - ROUND_FOUR) */
   --radius-xs: 2px;
   --radius-sm: 4px;

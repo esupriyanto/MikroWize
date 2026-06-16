@@ -33,7 +33,7 @@ export default function DeviceOnboarding() {
   }
 
   return (
-    <div className="max-w-3xl mx-auto space-y-6">
+    <div className="max-w-[48rem] mx-auto space-y-6">
       <Link to="/devices" className="flex items-center gap-1 text-sm text-on-surface-variant hover:text-primary">
         <ArrowLeft size={14} /> Back to Devices
       </Link>

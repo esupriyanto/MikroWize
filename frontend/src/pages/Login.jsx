@@ -23,7 +23,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-[48rem]">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -36,7 +36,7 @@ export default function Login() {
         {/* Login Form */}
         <div className="bg-surface-container-low rounded-2xl border border-outline-variant p-8">
           <h2 className="text-lg font-semibold text-on-surface mb-6">Sign in to your account</h2>
-          <form onSubmit={handleLogin} className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-5">
             <Input
               label="Email"
               type="email"

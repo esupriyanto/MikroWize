@@ -33,7 +33,7 @@ export default function Settings() {
       {activeTab === 'General' && (
         <Card>
           <CardHeader><CardTitle>General Settings</CardTitle></CardHeader>
-          <div className="space-y-4 max-w-lg">
+          <div className="space-y-4 max-w-[32rem]">
             <Input label="Platform Name" defaultValue="MikroWize" />
             <Select label="Timezone">
               <option>Asia/Jakarta (WIB)</option>
@@ -49,7 +49,7 @@ export default function Settings() {
       {activeTab === 'Notifications' && (
         <Card>
           <CardHeader><CardTitle>Notification Channels</CardTitle></CardHeader>
-          <div className="space-y-4 max-w-lg">
+          <div className="space-y-4 max-w-[32rem]">
             <Input label="SMTP Server" placeholder="smtp.gmail.com" />
             <Input label="SMTP Port" placeholder="587" />
             <Input label="SMTP Username" placeholder="alerts@mikrowize.io" />
@@ -67,7 +67,7 @@ export default function Settings() {
       {activeTab === 'Integrations' && (
         <Card>
           <CardHeader><CardTitle>API & Integrations</CardTitle></CardHeader>
-          <div className="space-y-4 max-w-lg">
+          <div className="space-y-4 max-w-[32rem]">
             <Input label="Zabbix API Endpoint" placeholder="http://zabbix.local/api_jsonrpc.php" />
             <Input label="Prometheus Endpoint" placeholder="http://prometheus:9090" />
             <Input label="Grafana URL" placeholder="http://grafana:3000" />

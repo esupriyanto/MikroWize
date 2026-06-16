@@ -4,6 +4,7 @@ import { ArrowLeft, Play, Wifi, Route, Globe, Gauge, Network, Shield, FileText, 
 import Card, { CardHeader, CardTitle } from '../components/ui/Card'
 import Button from '../components/ui/Button'
 import Input from '../components/ui/Input'
+import { Textarea } from '../components/ui/Input'
 import Badge from '../components/ui/Badge'
 import { mockDevices } from '../mock/data'
 
@@ -77,10 +78,10 @@ export default function TroubleshootPanel() {
           )}
 
           <Card>
-            <CardHeader><CardTitle>Script Executor</CardTitle></CardTitle></CardHeader>
+            <CardHeader><CardTitle>Script Executor</CardTitle></CardHeader>
             <p className="text-sm text-on-surface-variant mb-3">Run RouterOS commands directly (with approval for production devices)</p>
             <textarea
-              className="w-full h-32 px-3 py-2 bg-surface-container rounded-lg border border-outline-variant text-sm font-mono text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary/20"
+              className="w-full h-32 px-4 py-3 bg-surface-container-lowest rounded-lg border border-outline-variant text-base font-mono text-on-surface placeholder:text-outline transition-colors focus:border-primary focus:ring-1 focus:ring-primary/20"
               placeholder="/interface print where status=running"
             />
             <div className="mt-3 flex gap-2">

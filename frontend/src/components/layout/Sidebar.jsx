@@ -1,80 +1,120 @@
 import { NavLink } from 'react-router-dom'
 import {
-  LayoutDashboard, Server, Upload, HardDrive, Wrench,
-  FileCode, ListTodo, Bell, Users, Settings, Network
+  LayoutDashboard, Network, Server, Upload, FileUp,
+  HardDrive, Wrench, FileCode, ListTodo, Activity,
+  Bell, BarChart3, Bot, AlertTriangle, Users, ClipboardList, Settings
 } from 'lucide-react'
 
-const navItems = [
-  { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/devices', icon: Server, label: 'Devices' },
-  { to: '/devices/onboard', icon: Upload, label: 'Onboarding' },
-  { to: '/backups', icon: HardDrive, label: 'Backups' },
-  { to: '/troubleshoot/1', icon: Wrench, label: 'Troubleshoot' },
-  { to: '/templates', icon: FileCode, label: 'Templates' },
-  { to: '/tasks', icon: ListTodo, label: 'Task Queue' },
-  { to: '/alerts', icon: Bell, label: 'Alerts' },
-  { to: '/topology', icon: Network, label: 'Topology' },
-]
-
-const bottomItems = [
-  { to: '/users', icon: Users, label: 'Users' },
-  { to: '/settings', icon: Settings, label: 'Settings' },
+const sections = [
+  {
+    title: 'Overview',
+    items: [
+      { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard', end: true },
+      { to: '/topology', icon: Network, label: 'Topology Map' },
+    ],
+  },
+  {
+    title: 'Device Management',
+    items: [
+      { to: '/devices', icon: Server, label: 'Device Inventory', badge: '247' },
+      { to: '/devices/onboard', icon: Upload, label: 'Onboarding' },
+      { to: '/devices/import', icon: FileUp, label: 'Mass Import' },
+    ],
+  },
+  {
+    title: 'Operations',
+    items: [
+      { to: '/backups', icon: HardDrive, label: 'Backup Manager', badge: '2', badgeColor: 'error' },
+      { to: '/troubleshoot', icon: Wrench, label: 'Troubleshoot Panel' },
+      { to: '/templates', icon: FileCode, label: 'Template Framework' },
+      { to: '/tasks', icon: ListTodo, label: 'Task Queue', badge: '3', badgeColor: 'error' },
+    ],
+  },
+  {
+    title: 'Monitoring',
+    items: [
+      { to: '/metrics', icon: Activity, label: 'Live Metrics' },
+      { to: '/alerts', icon: Bell, label: 'Alerts', badge: '5', badgeColor: 'error' },
+      { to: '/grafana', icon: BarChart3, label: 'Grafana Dashboards' },
+    ],
+  },
+  {
+    title: 'Intelligence',
+    items: [
+      { to: '/ai', icon: Bot, label: 'AI Agent Hermes' },
+      { to: '/incidents', icon: AlertTriangle, label: 'Incidents' },
+    ],
+  },
+  {
+    title: 'Admin',
+    items: [
+      { to: '/users', icon: Users, label: 'Users & Roles' },
+      { to: '/audit', icon: ClipboardList, label: 'Audit Log' },
+      { to: '/settings', icon: Settings, label: 'Settings' },
+    ],
+  },
 ]
 
 export default function Sidebar() {
   return (
-    <aside className="w-64 h-screen bg-surface-container-low border-r border-outline-variant flex flex-col fixed left-0 top-0 z-30">
+    <aside className="h-screen w-[186px] fixed left-0 top-0 bg-surface-container-lowest border-r border-outline-variant flex flex-col z-50">
       {/* Logo */}
-      <div className="px-5 py-5 border-b border-outline-variant">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
-            <span className="text-on-primary font-bold text-sm">MW</span>
-          </div>
-          <div>
-            <h1 className="text-base font-semibold text-on-surface leading-tight">MikroWize</h1>
-            <p className="text-xs text-on-surface-variant">Network Manager</p>
-          </div>
+      <div className="px-4 py-4 border-b border-outline-variant">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-primary" />
+          <span className="font-bold text-[15px] text-on-surface leading-none">MikroWize</span>
         </div>
+        <div className="text-[10px] text-on-surface-variant mt-1">NOC Dashboard</div>
       </div>
 
-      {/* Main Nav */}
-      <nav className="flex-1 px-3 py-3 space-y-1 overflow-y-auto">
-        {navItems.map(({ to, icon: Icon, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                isActive
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-on-surface-variant hover:bg-surface-container hover:text-on-surface'
-              }`
-            }
-          >
-            <Icon size={18} />
-            <span>{label}</span>
-          </NavLink>
+      {/* Navigation */}
+      <nav className="flex-1 overflow-y-auto py-2">
+        {sections.map((section) => (
+          <div key={section.title}>
+            <div className="px-4 pt-3 pb-1 text-[9px] font-bold text-on-surface-variant tracking-wider uppercase">
+              {section.title}
+            </div>
+            {section.items.map(({ to, icon: Icon, label, end, badge, badgeColor }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={end}
+                className={({ isActive }) =>
+                  `flex items-center gap-2 px-4 py-1.5 text-[12px] font-medium transition-colors ${
+                    isActive
+                      ? 'bg-secondary-container text-primary'
+                      : 'text-on-surface-variant hover:bg-surface-container-low'
+                  }`
+                }
+              >
+                <Icon size={15} className="flex-shrink-0" />
+                <span className="truncate">{label}</span>
+                {badge && (
+                  <span className={`ml-auto text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${
+                    badgeColor === 'error'
+                      ? 'bg-error-container text-error'
+                      : 'bg-success-container text-on-success-container'
+                  }`}>
+                    {badge}
+                  </span>
+                )}
+              </NavLink>
+            ))}
+          </div>
         ))}
       </nav>
 
-      {/* Bottom Nav */}
-      <div className="px-3 py-3 border-t border-outline-variant space-y-1">
-        {bottomItems.map(({ to, icon: Icon, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
-                isActive
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-on-surface-variant hover:bg-surface-container hover:text-on-surface'
-              }`
-            }
-          >
-            <Icon size={18} />
-            <span>{label}</span>
-          </NavLink>
-        ))}
+      {/* User Profile */}
+      <div className="mt-auto px-4 py-2 border-t border-outline-variant">
+        <div className="flex items-center gap-2 cursor-pointer hover:bg-surface-container-low p-1 rounded transition-colors">
+          <div className="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary text-[10px] font-bold">
+            EK
+          </div>
+          <div className="flex flex-col flex-1 min-w-0">
+            <span className="text-on-surface font-semibold text-[11px] truncate">Eko</span>
+            <span className="text-on-surface-variant text-[9px]">Super Admin</span>
+          </div>
+        </div>
       </div>
     </aside>
   )

@@ -34,7 +34,7 @@ export default function DeviceInventory() {
 
       {/* Filters */}
       <div className="flex items-center gap-3">
-        <div className="relative flex-1 max-w-sm">
+        <div className="relative flex-1 max-w-[20rem]">
           <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-outline" />
           <input
             type="text"
