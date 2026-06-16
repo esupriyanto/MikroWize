@@ -1,0 +1,23 @@
+version: "3.8"
+
+# Production override — build frontend as static, serve via nginx
+services:
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile.prod
+    ports: []  # Don't expose directly, served through nginx
+    command: echo "Frontend built — served by nginx"
+
+  backend:
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+    environment:
+      - DEBUG=false
+
+  celery-worker:
+    command: celery -A app.tasks.celery_app worker --loglevel=warning --concurrency=8
+
+  nginx:
+    ports:
+      - "80:80"
+      - "443:443"
