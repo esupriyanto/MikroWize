@@ -6,7 +6,7 @@
 
 ## 📌 Overview
 
-**MikroWize** adalah web application untuk manajemen fleet MikroTik router dan switch secara terpusat. Platform ini menggabungkan pendekatan OptiWize (onboarding otomatis, backup, monitoring, troubleshooting panel) dengan kemampuan spesifik MikroTik seperti Winbox API, RouterOS scripting, dan integrasi AI agent untuk auto-remediation.
+**MikroWize** adalah web application untuk manajemen fleet MikroTik router dan switch secara terpusat. Platform ini menggabungkan onboarding otomatis, backup, monitoring, troubleshooting panel dengan kemampuan spesifik MikroTik seperti Winbox API, RouterOS scripting, dan integrasi AI agent untuk auto-remediation.
 
 Target pengguna: ISP lokal, NOC engineer, IT infrastruktur perusahaan yang punya puluhan hingga ribuan device MikroTik.
 
