@@ -58,6 +58,17 @@ coverage.xml
 # OS files
 .DS_Store
 Thumbs.db
+*~
+.Thumbs.db
+ehthumbs.db
+
+# Backend specific
+*.db
+*.sqlite
+*.sqlite3
+
+# Docker
+docker-compose.override.yml
 
 # Frontend (Node)
 node_modules/
@@ -70,6 +81,12 @@ yarn-error.log*
 dist/
 dist-ssr/
 *.local
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
 
 # Log files
 *.log
+
+# Hermes / Claude
+.hermes/
+.claude/
