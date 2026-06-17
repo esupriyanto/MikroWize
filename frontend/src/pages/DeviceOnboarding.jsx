@@ -52,26 +52,26 @@ const templatePreview = {
 /system ntp client servers add address=0.id.pool.ntp.org
 /system ntp client servers add address=1.id.pool.ntp.org
 /system clock set time-zone-name=Asia/Jakarta
-:log info "NTP configured for ${hostname}"`,
+:log info "NTP configured for \${hostname}"`,
   'dns': `/ip dns set allow-remote-requests=no servers=1.1.1.1,8.8.8.8
 /ip dhcp-server network set [ find ] dns-server=1.1.1.1
-:log info "DNS configured for ${hostname}"`,
+:log info "DNS configured for \${hostname}"`,
   'hardening': `/service disable telnet,ftp,www,api,api-ssl
 /ip service set ssh address=10.0.0.0/8
 /ip service set winbox address=10.0.0.0/8
-:log info "Hardening applied to ${hostname}"`,
-  'full': `# Full Base Config for ${hostname}
+:log info "Hardening applied to \${hostname}"`,
+  'full': `# Full Base Config for \${hostname}
 /system identity set name=\${hostname}
 /system ntp client set enabled=yes
 /system ntp client servers add address=0.id.pool.ntp.org
 /ip dns set servers=1.1.1.1,8.8.8.8
 /service disable telnet,ftp,www,api,api-ssl
-/user set [ find name=admin ] password=${admin_pass}
+/user set [ find name=admin ] password=\${admin_pass}
 /ip firewall filter add chain=input action=drop connection-state=invalid
 /ip firewall filter add chain=input action=accept connection-state=established,related
 /ip firewall filter add chain=input action=accept protocol=icmp
 /ip firewall filter add chain=input action=drop
-:log info "Full config applied to ${hostname}"`,
+:log info "Full config applied to \${hostname}"`,
 }
 
 export default function DeviceOnboarding() {
