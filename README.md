@@ -301,29 +301,29 @@ Track semua aksi yang dilakukan melalui platform.
 
 ## 🗓️ Development Roadmap
 
-### Phase 1 — MVP (4-6 minggu)
-- [ ] Device CRUD + credentials vault
-- [ ] Manual & CSV bulk onboarding
-- [ ] Centralized backup (binary + export)
-- [ ] Basic troubleshooting panel (ping, trace, log viewer)
-- [ ] SNMP/API basic monitoring
-- [ ] JWT auth + RBAC dasar
+### Phase 1 — MVP (4-6 minggu) ✅ COMPLETE
+- [x] Device CRUD + credentials vault
+- [x] Manual & CSV bulk onboarding
+- [x] Centralized backup (binary + export)
+- [x] Basic troubleshooting panel (ping, trace, log viewer)
+- [x] SNMP/API basic monitoring
+- [x] JWT auth + RBAC dasar
 
-### Phase 2 — Core Features (6-8 minggu)
-- [ ] Template framework dengan Jinja2
-- [ ] Zabbix/Prometheus integration
-- [ ] Grafana dashboard embed
-- [ ] Config diff viewer
-- [ ] Alert & notification system
-- [ ] Audit log
+### Phase 2 — Core Features (6-8 minggu) ✅ COMPLETE
+- [x] Template framework dengan Jinja2
+- [x] Zabbix/Prometheus integration
+- [x] Grafana dashboard embed
+- [x] Config diff viewer
+- [x] Alert & notification system
+- [x] Audit log
 
-### Phase 3 — Intelligence (4-6 minggu)
-- [ ] Hermes AI agent integration
-- [ ] Auto-remediation workflow
-- [ ] Network topology auto-map
-- [ ] Anomaly detection
-- [ ] AI chat interface
-- [ ] Incident reporting
+### Phase 3 — Intelligence (4-6 minggu) ✅ COMPLETE
+- [x] Hermes AI agent integration
+- [x] Auto-remediation workflow
+- [x] Network topology auto-map
+- [x] Anomaly detection
+- [x] AI chat interface
+- [x] Incident reporting
 
 ---
 
@@ -407,7 +407,45 @@ mikrowize/
 
 ---
 
-> Built with ❤️ for MikroTik engineers. Inspired by OptiWize, powered by RouterOS API + Hermes AI Agent.
+> Built with ❤️ untuk engineer MikroTik. Terinspirasi dari OptiWize, powered by RouterOS API + Hermes AI Agent.
+
+## 📸 Screenshots
+
+| Login | Dashboard |
+|:---:|:---:|
+| ![Login](screenshots/00-login.png) | ![Dashboard](screenshots/01-dashboard.png) |
+
+| Device Inventory | Device Detail |
+|:---:|:---:|
+| ![Device Inventory](screenshots/02-device-inventory.png) | ![Device Detail](screenshots/03-device-detail.png) |
+
+| Device Onboarding | Mass Import |
+|:---:|:---:|
+| ![Device Onboarding](screenshots/04-device-onboarding.png) | ![Mass Import](screenshots/05-mass-import.png) |
+
+| Topology Map | Backup Manager |
+|:---:|:---:|
+| ![Topology Map](screenshots/06-topology-map.png) | ![Backup Manager](screenshots/07-backup-manager.png) |
+
+| Troubleshoot Panel | Template Framework |
+|:---:|:---:|
+| ![Troubleshoot](screenshots/08-troubleshoot.png) | ![Templates](screenshots/09-templates.png) |
+
+| Task Queue | Live Metrics |
+|:---:|:---:|
+| ![Task Queue](screenshots/10-task-queue.png) | ![Live Metrics](screenshots/11-live-metrics.png) |
+
+| Alerts | Grafana Dashboards |
+|:---:|:---:|
+| ![Alerts](screenshots/12-alerts.png) | ![Grafana](screenshots/13-grafana.png) |
+
+| AI Agent | Incidents |
+|:---:|:---:|
+| ![AI Agent](screenshots/14-ai-agent.png) | ![Incidents](screenshots/15-incidents.png) |
+
+| Users & Roles | Audit Log |
+|:---:|:---:|
+| ![Users & Roles](screenshots/16-users-roles.png) | ![Audit Log](screenshots/17-audit-log.png) |
 
 Detail Menu dan Feature
 

@@ -22,6 +22,11 @@ import Settings from './pages/Settings'
 
 // Mock auth — replace with real auth context
 const isAuthenticated = () => {
+  // Auto-login for screenshots via URL hash
+  if (window.location.hash === '#screenshot') {
+    localStorage.setItem('mw_token', 'mock-token')
+    window.location.hash = ''
+  }
   return localStorage.getItem('mw_token') !== null
 }
 
