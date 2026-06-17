@@ -12,6 +12,93 @@ Target pengguna: ISP lokal, NOC engineer, IT infrastruktur perusahaan yang punya
 
 ---
 
+## 🚀 Installation
+
+### Prerequisites
+
+- [Docker](https://docs.docker.com/engine/install/) & [Docker Compose](https://docs.docker.com/compose/install/)
+- [Node.js](https://nodejs.org/) v18+ (for local frontend development)
+- [Python](https://www.python.org/) 3.11+ (for local backend development)
+- Git
+
+### Quick Start (Docker Compose)
+
+```bash
+# Clone repository
+git clone https://github.com/esupriyanto/MikroWize.git
+cd MikroWize
+
+# Start all services
+docker compose -f infra/docker-compose.yml up -d
+
+# Access the app
+# Frontend:  http://localhost (nginx)
+# Frontend:  http://localhost:5173 (Vite dev server)
+# Backend:   http://localhost:8001
+# API Docs:  http://localhost:8001/docs
+```
+
+### Default Login
+
+| Role | Email | Password |
+|---|---|---|
+| Super Admin | admin@mikrowize.io | admin123 |
+| NOC Engineer | noc@mikrowize.io | noc123 |
+| Network Engineer | neteng@mikrowize.io | neteng123 |
+| Read-Only | readonly@mikrowize.io | readonly123 |
+| Customer | customer@mikrowize.io | customer123 |
+
+### Local Development (Without Docker)
+
+**Backend:**
+```bash
+cd backend
+python -m venv venv
+source venv/bin/activate    # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+cp .env.example .env        # Edit with your config
+uvicorn app.main:app --reload --port 8000
+```
+
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev    # http://localhost:5173
+```
+
+### Service Architecture
+
+| Service | Port | Description |
+|---|---|---|
+| Nginx | 80 | Reverse proxy |
+| Frontend | 5173 | React + Vite + TailwindCSS |
+| Backend | 8001 | FastAPI (use port 8000 for local dev) |
+| PostgreSQL | 5432 | Primary database |
+| Redis | 6379 | Cache + Celery broker |
+| Celery Worker | - | Background task runner |
+
+### Environment Variables
+
+Backend `.env` file:
+
+```env
+DATABASE_URL=postgresql://mikrowize:secret@localhost:5432/mikrowize
+REDIS_URL=redis://localhost:6379/0
+SECRET_KEY=your-secret-key-change-in-production
+ACCESS_TOKEN_EXPIRE_MINUTES=480
+```
+
+### Stop & Clean Up
+
+```bash
+# Stop all services
+docker compose -f infra/docker-compose.yml down
+
+# Stop and remove volumes (WARNING: deletes all data)
+docker compose -f infra/docker-compose.yml down -v
+```
+
 ## 🏗️ Tech Stack
 
 | Layer | Technology |
