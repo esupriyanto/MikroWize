@@ -10,7 +10,14 @@ import TroubleshootPanel from './pages/TroubleshootPanel'
 import TemplateFramework from './pages/TemplateFramework'
 import TaskQueue from './pages/TaskQueue'
 import Alerts from './pages/Alerts'
+import TopologyMap from './pages/TopologyMap'
+import MassImport from './pages/MassImport'
+import LiveMetrics from './pages/LiveMetrics'
+import GrafanaDashboards from './pages/GrafanaDashboards'
+import AIAgent from './pages/AIAgent'
+import Incidents from './pages/Incidents'
 import UsersRoles from './pages/UsersRoles'
+import AuditLog from './pages/AuditLog'
 import Settings from './pages/Settings'
 
 // Mock auth — replace with real auth context
@@ -42,7 +49,14 @@ export default function App() {
                 <Route path="/templates" element={<TemplateFramework />} />
                 <Route path="/tasks" element={<TaskQueue />} />
                 <Route path="/alerts" element={<Alerts />} />
+                <Route path="/topology" element={<TopologyMap />} />
+                <Route path="/devices/import" element={<MassImport />} />
+                <Route path="/metrics" element={<LiveMetrics />} />
+                <Route path="/grafana" element={<GrafanaDashboards />} />
+                <Route path="/ai" element={<AIAgent />} />
+                <Route path="/incidents" element={<Incidents />} />
                 <Route path="/users" element={<UsersRoles />} />
+                <Route path="/audit" element={<AuditLog />} />
                 <Route path="/settings" element={<Settings />} />
               </Routes>
             </AppShell>
