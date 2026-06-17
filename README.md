@@ -384,3 +384,43 @@ Track semua aksi yang dilakukan melalui platform.
               └──────────────────────────────────┘
 ```
 
+---
+
+## 📸 Screenshots
+
+| Login | Dashboard |
+|:---:|:---:|
+| ![Login](screenshots/00-login.png) | ![Dashboard](screenshots/01-dashboard.png) |
+
+| Device Inventory | Device Detail |
+|:---:|:---:|
+| ![Device Inventory](screenshots/02-device-inventory.png) | ![Device Detail](screenshots/03-device-detail.png) |
+
+| Device Onboarding | Mass Import |
+|:---:|:---:|
+| ![Device Onboarding](screenshots/04-device-onboarding.png) | ![Mass Import](screenshots/05-mass-import.png) |
+
+| Topology Map | Backup Manager |
+|:---:|:---:|
+| ![Topology Map](screenshots/06-topology-map.png) | ![Backup Manager](screenshots/07-backup-manager.png) |
+
+| Troubleshoot Panel | Template Framework |
+|:---:|:---:|
+| ![Troubleshoot](screenshots/08-troubleshoot.png) | ![Templates](screenshots/09-templates.png) |
+
+| Task Queue | Live Metrics |
+|:---:|:---:|
+| ![Task Queue](screenshots/10-task-queue.png) | ![Live Metrics](screenshots/11-live-metrics.png) |
+
+| Alerts | Grafana Dashboards |
+|:---:|:---:|
+| ![Alerts](screenshots/12-alerts.png) | ![Grafana](screenshots/13-grafana.png) |
+
+| AI Agent | Incidents |
+|:---:|:---:|
+| ![AI Agent](screenshots/14-ai-agent.png) | ![Incidents](screenshots/15-incidents.png) |
+
+| Users & Roles | Audit Log |
+|:---:|:---:|
+| ![Users & Roles](screenshots/16-users-roles.png) | ![Audit Log](screenshots/17-audit-log.png) |
+
